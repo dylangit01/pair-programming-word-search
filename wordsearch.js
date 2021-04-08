@@ -2,7 +2,6 @@ const wordSearch = (letters, word) => {
     if (letters.length === 0) return false;
     let reversedW = word.split('').reverse().join('');
     const transposed = transpose(letters);
-    //console.log(transposed);
     
     const horizontalJoin = letters.map((ls) => ls.join(''));
     const verticalJoin = transposed.map((ls) => ls.join(''));
@@ -15,9 +14,7 @@ const wordSearch = (letters, word) => {
       if (line.includes(word)|| line.includes(reversedW)) return true;
     }
     
-
     return false;
-
 };
 
 const transpose = function (matrix) {
@@ -32,6 +29,5 @@ const transpose = function (matrix) {
   }
   return resArr;
 };
-
 
 module.exports = wordSearch;
